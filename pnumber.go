@@ -68,7 +68,6 @@ func primeFinder(ctx context.Context, valCh <-chan int64) <-chan interface{} {
 			}
 			if isPrime(i) {
 				ret <- i
-				break
 			}
 		}
 	}()
