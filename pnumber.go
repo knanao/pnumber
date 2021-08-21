@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"math"
 	"math/rand"
 	"runtime"
 	"sync"
@@ -75,7 +76,8 @@ func primeFinder(ctx context.Context, valCh <-chan int64) <-chan interface{} {
 }
 
 func isPrime(n int64) bool {
-	for i := int64(2); i < n; i++ {
+	b := int64(math.Min(float64(n-1), math.Sqrt(float64(n))))
+	for i := int64(2); i <= b; i++ {
 		if n%i == 0 {
 			return false
 		}

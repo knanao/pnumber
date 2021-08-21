@@ -25,7 +25,7 @@ func BenchmarkPerm10(b *testing.B) {
 	}
 }
 
-func BenchmarkPerm100x(b *testing.B) {
+func BenchmarkPerm100(b *testing.B) {
 	const max = 50000000
 	for i := 0; i < b.N; i++ {
 		_ = Perm(100, max)
